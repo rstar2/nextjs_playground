@@ -1,0 +1,39 @@
+ .button {
+  position: relative;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 9999px;
+  background-color: #f6f5f5;
+  padding-inline: 24px;
+  font-weight: 500;
+  color: #21201c;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  transition: transform 160ms ease-out;
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.button:active .hold-overlay {
+  clip-path: inset(0px 0px 0px 0px);
+  transition: clip-path 2s linear;
+}
+
+.hold-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background-color: #ffdbdc;
+  color: #e5484d;
+  clip-path: inset(0px 100% 0px 0px);
+  transition: clip-path 200ms ease-out;
+}

@@ -1,0 +1,27 @@
+.marquee-container-css {
+  position: relative;
+  width: 588px;
+  height: 187px;
+
+  .marquee-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 15%;
+    background-color: black;
+    offset-path: path(attr(data-svg-path));
+    offset-rotate: auto;
+    animation: moveAlong 6s linear infinite;
+  }
+}
+
+@keyframes moveAlong {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}

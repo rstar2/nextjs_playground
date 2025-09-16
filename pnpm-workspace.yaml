@@ -1,0 +1,10 @@
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - sharp
+  - unrs-resolver
+
+# This is needed to ensure that eslint is hoisted to the root node_modules
+# needed for VSCode-eslint to work with pnpm-10
+# See https://github.com/microsoft/vscode-eslint/issues/1986
+publicHoistPattern:
+  - '*eslint*'  

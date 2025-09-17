@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 import PageHeader from "@/components/shared/PageHeader";
 
-import PathFollower from "./PathFollower";
-import MarqueePathFollower from "./MarqueePathFollower";
+import PathFollower from "./PathFollowerCSS";
+import MarqueePathFollower from "./PathFollowerMotion";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

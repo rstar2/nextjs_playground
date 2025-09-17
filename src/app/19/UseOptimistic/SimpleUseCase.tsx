@@ -17,19 +17,21 @@ function LikeButton({ text, initialCount = 0, sendLike }: LikeButtonProps) {
   const [optimisticCount, addOptimisticLike] = useOptimistic(count, (current, delta: number) => current + delta);
 
   function handleLike() {
-    // startTransition(() => {
-    // Optimistically increment the count
-    addOptimisticLike(1);
+    // An optimistic state update SHOULD occur ALWAYS inside a transition (e.g. wrapped with startTransition)
+    // or action.
+    startTransition(() => {
+      // Optimistically increment the count
+      addOptimisticLike(1);
 
-    // Actually send to the server using the provided async function
-    startTransition(async () => {
-      await sendLike();
+      // Actually send to the server using the provided async function
+      startTransition(async () => {
+        await sendLike();
 
-      startTransition(() => {
-        setCount((c) => c + 1);
+        startTransition(() => {
+          setCount((c) => c + 1);
+        });
       });
     });
-    // });
   }
 
   return (

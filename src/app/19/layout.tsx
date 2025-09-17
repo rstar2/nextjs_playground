@@ -5,14 +5,14 @@ import PageHeader from "@/components/shared/PageHeader";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Dev",
+    title: "React19",
   };
 }
 
 export default async function TesLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <PageHeader header="React19 demo page" />
+      <PageHeader header="React19 Demo" />
       {children}
     </>
   );

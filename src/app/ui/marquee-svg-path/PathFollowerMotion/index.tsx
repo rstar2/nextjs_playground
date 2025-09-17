@@ -21,7 +21,7 @@ type MarqueePathFollowerProps = {
   baseVelocity: number;
 };
 
-export default function MarqueePathFollower({ path, baseVelocity }: MarqueePathFollowerProps) {
+export default function PathFollowerMotion({ path, baseVelocity }: MarqueePathFollowerProps) {
   const baseOffset = useMotionValue(0);
   const offset = useTransform(baseOffset, (v) => `${wrap(0, 100, v)}%`);
 

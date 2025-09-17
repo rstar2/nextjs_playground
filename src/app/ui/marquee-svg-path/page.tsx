@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 
 import PageHeader from "@/components/shared/PageHeader";
 
+// pure CSS
 import PathFollower from "./PathFollowerCSS";
-import MarqueePathFollower from "./PathFollowerMotion";
+// using Motion
+import { PathFollowerMotionSingle, PathFollowerMotionMulti } from "./PathFollowerMotion/";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -22,7 +24,10 @@ export default async function DevUIMarqueeSVGPathPage() {
       <PathFollower svgPath={path} />
 
       <h2 className="my-2 text-center text-lg font-semibold">Motion (velocity, scroll-animation)</h2>
-      <MarqueePathFollower path={path} baseVelocity={30} />
+      <PathFollowerMotionSingle path={path} baseVelocity={30} />
+      <PathFollowerMotionMulti path={path} baseVelocity={5} hoverVelocity={2} repeat={30} pathHidden>
+        Item
+      </PathFollowerMotionMulti>
     </>
   );
 }

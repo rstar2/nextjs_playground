@@ -5,11 +5,11 @@ import DevUIHoldButtonPageClient from "./page-client";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Dev UI | Hold-Button",
+    title: "UI | Hold-Button",
   };
 }
 
-export default async function DevUIHoldButtonPage() {
+export default async function HoldButtonPage() {
   return (
     <>
       <PageHeader header="Hold-Button" />
